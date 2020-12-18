@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer mini-variant fixed app floating>
+    <v-navigation-drawer mini-variant fixed app floating color="primary">
       <v-list>
         <v-tooltip
           v-for="(item, i) in items"
@@ -22,7 +22,7 @@
         </v-tooltip>
       </v-list>
     </v-navigation-drawer>
-    <v-main>
+    <v-main class="secondary">
       <v-container>
         <nuxt />
       </v-container>

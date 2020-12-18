@@ -1,19 +1,19 @@
 <template>
   <v-container>
     <v-row>
-      <h1>My Projects</h1>
+      <h1 id="main-title">My Projects</h1>
     </v-row>
     <v-row justify="center" align="center">
       <v-col v-for="item in items" :key="item.title" cols="12" sm="8" md="4">
         <v-hover>
           <template v-slot:default="{ hover }">
             <v-card id="item-card" hover color="primary">
-              <v-img src="https://source.unsplash.com/random/800x400"></v-img>
-              <v-card-title>{{ item.title }}</v-card-title>
+              <v-img :src="item.image"></v-img>
+              <v-card-title class="card-title">{{ item.title }}</v-card-title>
               <v-card-subtitle>{{ item.subtitle }}</v-card-subtitle>
               <v-fade-transition>
                 <v-overlay v-if="hover" absolute color="#750999">
-                  <v-btn>Read More</v-btn>
+                  <v-btn>Read Article</v-btn>
                 </v-overlay>
               </v-fade-transition>
             </v-card>
@@ -30,10 +30,22 @@ export default {
     return {
       items: [
         {
-          title: 'Card',
+          title: 'Working with arrays in Vue.js',
           type: 'Article',
           subtitle: 'Description',
-          image: '',
+          image: 'vue-array-article-cover.png',
+        },
+        {
+          title: 'Working With CSV Files',
+          type: 'Article',
+          subtitle: 'Description',
+          image: 'csv-article-cover.png',
+        },
+        {
+          title: 'Netlify Environment Variables',
+          type: 'Article',
+          subtitle: 'Description',
+          image: 'environment-variables-article-cover.png',
         },
       ],
     }
@@ -47,5 +59,13 @@ export default {
   &:hover {
     transform: translateY(-3px);
   }
+}
+
+#main-title {
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-weight: 600;
 }
 </style>

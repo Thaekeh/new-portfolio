@@ -6,7 +6,8 @@
       app
       floating
       color="primary"
-      mini-variant-width="80"
+      mini-variant-width="65"
+      id="navigation-drawer"
     >
       <v-list>
         <v-tooltip
@@ -125,6 +126,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#navigation-drawer {
+  box-shadow: 5px 0 10px -2px #000000;
+}
+
 .list-item {
   cursor: pointer;
   &:hover .icon {

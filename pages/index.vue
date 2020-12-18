@@ -3,8 +3,48 @@
     <v-row>
       <h1 id="main-title">My Projects</h1>
     </v-row>
+    <v-row id="search-row" align="center">
+      <v-col>
+        <v-item-group id="type-selector" multiple>
+          <v-item v-slot="{ active }"
+            ><v-chip
+              active-class="purple--text"
+              :input-value="active"
+              @click="appTag = !appTag"
+              v-model="appTag"
+            >
+              App
+            </v-chip></v-item
+          >
+          <v-item v-slot="{ active }"
+            ><v-chip
+              active-class="purple--text"
+              :input-value="active"
+              @click="articleTag = !articleTag"
+              v-model="articleTag"
+            >
+              Article
+            </v-chip></v-item
+          >
+        </v-item-group>
+      </v-col>
+      <v-col>
+        <v-text-field
+          placeholder="Search for a specific project"
+          v-model="searchQuery"
+          append-outer-icon="mdi-magnify"
+          color="#750999"
+        ></v-text-field>
+      </v-col>
+    </v-row>
     <v-row id="item-row" justify="center" align="center">
-      <v-col v-for="item in items" :key="item.title" cols="12" sm="8" md="4">
+      <v-col
+        v-for="item in filteredItems"
+        :key="item.title"
+        cols="12"
+        sm="8"
+        md="4"
+      >
         <v-hover>
           <template v-slot:default="{ hover }">
             <v-card id="item-card" hover color="primary">
@@ -32,6 +72,9 @@
 export default {
   data() {
     return {
+      searchQuery: '',
+      appTag: true,
+      articleTag: true,
       items: [
         {
           title: 'Train That Brain',
@@ -61,6 +104,33 @@ export default {
       ],
     }
   },
+  computed: {
+    filteredItems() {
+      let tempArray = this.items
+
+      if (!this.articleTag) {
+        tempArray = tempArray.filter((item) => {
+          return !item.type.includes('Article')
+        })
+      }
+
+      if (!this.appTag) {
+        tempArray = tempArray.filter((item) => {
+          return !item.type.includes('App')
+        })
+      }
+
+      if (this.searchQuery !== '' && this.searchQuery) {
+        tempArray = tempArray.filter((item) => {
+          return item.title
+            .toUpperCase()
+            .includes(this.searchQuery.toUpperCase())
+        })
+      }
+
+      return tempArray
+    },
+  },
 }
 </script>
 
@@ -68,8 +138,10 @@ export default {
 #container {
   max-width: 90vw;
 }
+
 #item-card {
   min-height: 300px;
+  margin: 5px;
   border-radius: 10px;
   transition: all 300ms;
   &:hover {

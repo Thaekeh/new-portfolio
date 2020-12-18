@@ -1,21 +1,25 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer mini-variant fixed app>
+    <v-navigation-drawer mini-variant fixed app floating>
       <v-list>
-        <v-list-item
+        <v-tooltip
           v-for="(item, i) in items"
           :key="i"
-          :to="item.to"
-          router
-          exact
+          right
+          transition="slide-x-transition"
         >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
+          <template v-slot:activator="{ on, attrs }">
+            <v-list-item :to="item.to" router exact v-bind="attrs" v-on="on">
+              <v-list-item-action>
+                <v-icon>{{ item.icon }}</v-icon>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title v-text="item.title" />
+              </v-list-item-content>
+            </v-list-item>
+          </template>
+          <span>{{ item.title }}</span>
+        </v-tooltip>
       </v-list>
     </v-navigation-drawer>
     <v-main>
@@ -26,7 +30,7 @@
   </v-app>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   data() {
     return {

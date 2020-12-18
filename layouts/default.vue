@@ -1,6 +1,13 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer mini-variant fixed app floating color="primary">
+    <v-navigation-drawer
+      mini-variant
+      fixed
+      app
+      floating
+      color="primary"
+      mini-variant-width="80"
+    >
       <v-list>
         <v-tooltip
           v-for="(item, i) in items"
@@ -18,7 +25,7 @@
               v-on="on"
             >
               <v-list-item-action class="list-item-action">
-                <v-icon class="icon">{{ item.icon }}</v-icon>
+                <v-icon class="icon" size="30">{{ item.icon }}</v-icon>
               </v-list-item-action>
               <v-list-item-content>
                 <v-list-item-title v-text="item.title" />
@@ -46,7 +53,7 @@
                 v-on="on"
               >
                 <v-list-item-action class="list-item-action">
-                  <v-icon class="icon">{{ social.icon }}</v-icon>
+                  <v-icon class="icon" size="25">{{ social.icon }}</v-icon>
                 </v-list-item-action>
                 <v-list-item-content>
                   <v-list-item-title v-text="social.title" />
@@ -58,7 +65,7 @@
         </v-list>
       </template>
     </v-navigation-drawer>
-    <v-main class="secondary">
+    <v-main class="secondary" id="main">
       <v-container>
         <nuxt />
       </v-container>
@@ -132,4 +139,8 @@ export default {
 #social-list {
   bottom: 20px;
 }
+
+// #main {
+//   width: 90%;
+// }
 </style>

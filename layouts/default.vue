@@ -151,7 +151,7 @@
     </v-navigation-drawer>
     <v-main id="main" class="secondary">
       <v-container>
-        <nuxt />
+        <nuxt id="screen" />
       </v-container>
     </v-main>
   </v-app>
@@ -172,11 +172,6 @@ export default {
           icon: 'mdi-code-tags',
           title: 'Code',
           to: '/code',
-        },
-        {
-          icon: 'mdi-bookshelf',
-          title: 'Books',
-          to: '/books',
         },
       ],
       socials: [
@@ -214,14 +209,14 @@ export default {
   box-shadow: 5px 0 10px -2px #000000;
 }
 
-#main {
+#screen {
   margin-top: 30px;
 }
 
 .list-item {
   cursor: pointer;
   &:hover .icon {
-    color: #b629e5 !important;
+    color: var(--v-purple-base) !important;
   }
 }
 

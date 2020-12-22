@@ -67,10 +67,17 @@
               <v-card-subtitle>{{ item.subtitle }}</v-card-subtitle>
               <v-fade-transition>
                 <v-overlay v-if="hover" absolute color="#750999">
-                  <v-btn v-if="item.type === 'Article'">Read Article</v-btn>
+                  <v-btn
+                    v-if="item.type === 'Article'"
+                    :href="item.to"
+                    target="_blank"
+                    >Read Article</v-btn
+                  >
                   <span v-else class="button-span">
                     <v-btn class="button">Learn More</v-btn>
-                    <v-btn class="button">{{ item.buttonTwo }}</v-btn>
+                    <v-btn class="button" :href="item.to" target="_blank">{{
+                      item.buttonTwo
+                    }}</v-btn>
                   </span>
                 </v-overlay>
               </v-fade-transition>
@@ -104,6 +111,7 @@ export default {
           subtitle: 'Learning App For Autodidacts',
           image: 'ttb-cover.png',
           buttonTwo: 'Visit Site',
+          to: 'https://www.trainthatbrain.app',
         },
         {
           title: 'UI Components',
@@ -111,24 +119,31 @@ export default {
           subtitle: 'Chrome Extension For Designing Components',
           image: 'ui-extension-cover.png',
           buttonTwo: 'Visit Extension',
+          to: 'https://chrome.google.com/webstore/detail/ui-component-creator/mlnbpchpagncgbmikclojpbibgjaindf?hl=en-US',
         },
         {
           title: 'Working With Arrays In Vue.js',
           type: 'Article',
           subtitle: 'Medium Article',
           image: 'vue-array-article-cover.png',
+          to:
+            'https://medium.com/swlh/filtering-sorting-and-searching-in-arrays-with-vue-js-f60951c040fc',
         },
         {
           title: 'Working With CSV Files',
           type: 'Article',
           subtitle: 'Medium Article',
           image: 'csv-article-cover.png',
+          to:
+            'https://thaekeh.medium.com/processing-csv-files-with-javascript-and-papa-parse-5e69fd951baa',
         },
         {
           title: 'Netlify Environment Variables',
           type: 'Article',
           subtitle: 'Medium Article',
           image: 'environment-variables-article-cover.png',
+          to:
+            'https://thaekeh.medium.com/working-with-netlify-environment-variables-2ba2ce20797c',
         },
       ],
     }

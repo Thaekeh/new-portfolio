@@ -45,10 +45,16 @@ export default {
     treeShake: true,
     theme: {
       dark: true,
+      options: {
+        customProperties: true,
+      },
       themes: {
         dark: {
+          // primary: '#3e4b60',
           primary: '#2A2E35',
-          secondary: '#12181B',
+          // secondary: '#12181B',
+          secondary: '#171f23',
+          purple: '#b629e5',
           accent: colors.grey.darken3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,

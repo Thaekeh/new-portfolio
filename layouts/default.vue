@@ -206,7 +206,7 @@ export default {
 
 <style lang="scss" scoped>
 #navigation-drawer {
-  box-shadow: 5px 0 10px -2px #000000;
+  box-shadow: 5px 0 10px -2px #00000080;
 }
 
 #screen {

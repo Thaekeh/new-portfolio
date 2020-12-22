@@ -1,20 +1,12 @@
-# portfolio
+# New Portfolio
 
-## Build Setup
+This is the code of my new portfolio website.
+It is currently under development but will soon be done.
 
-```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+Technologies used for this website are:
+- Vue.js
+- Nuxt.js
+- Nuxt Content
+- TypeScript
+- SCSS
+- Vuetify

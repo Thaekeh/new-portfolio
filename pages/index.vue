@@ -74,7 +74,9 @@
                     >Read Article</v-btn
                   >
                   <span v-else class="button-span">
-                    <v-btn class="button">Learn More</v-btn>
+                    <v-btn class="button" @click.stop="showProject(item)"
+                      >Learn More</v-btn
+                    >
                     <v-btn class="button" :href="item.to" target="_blank">{{
                       item.buttonTwo
                     }}</v-btn>
@@ -93,10 +95,17 @@
         </h2>
       </v-col>
     </v-row>
+    <v-dialog v-model="dialog" width="50%">
+      <v-card width="100%" height="100%">
+        <nuxt-content :document="selectedProject.content" />
+      </v-card>
+    </v-dialog>
   </v-container>
 </template>
 
 <script>
+// Vue Component Import
+
 export default {
   data() {
     return {
@@ -104,12 +113,15 @@ export default {
       appTag: true,
       articleTag: true,
       emptyArray: false,
+      dialog: false,
+      selectedProject: '',
       items: [
         {
           title: 'Train That Brain',
           type: 'Web App',
           subtitle: 'Learning App For Autodidacts',
           image: 'ttb-cover.png',
+          contentName: 'trainthatbrain',
           buttonTwo: 'Visit Site',
           to: 'https://www.trainthatbrain.app',
         },
@@ -118,8 +130,10 @@ export default {
           type: 'Chrome Extension',
           subtitle: 'Chrome Extension For Designing Components',
           image: 'ui-extension-cover.png',
+          contentName: 'uicomponent',
           buttonTwo: 'Visit Extension',
-          to: 'https://chrome.google.com/webstore/detail/ui-component-creator/mlnbpchpagncgbmikclojpbibgjaindf?hl=en-US',
+          to:
+            'https://chrome.google.com/webstore/detail/ui-component-creator/mlnbpchpagncgbmikclojpbibgjaindf?hl=en-US',
         },
         {
           title: 'Working With Arrays In Vue.js',
@@ -173,6 +187,18 @@ export default {
       }
 
       return tempArray
+    },
+  },
+  methods: {
+    showProject(item) {
+      this.selectedProject = { ...item, content: '' }
+      this.dialog = true
+      this.getContent()
+    },
+    async getContent() {
+      this.selectedProject.content = await this.$content(
+        `projects/${this.selectedProject.contentName}`
+      ).fetch()
     },
   },
 }

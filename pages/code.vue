@@ -3,7 +3,7 @@
     <v-col class="text-center">
       <div>
         <h2 class="pen-title">
-          Sorting, filtering, and searching arrays with Vue.
+          Sorting, Filtering, and Searching Arrays With Vue
         </h2>
         <v-card color="secondary" flat>
           <v-progress-circular
@@ -71,6 +71,9 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .pen-title {
   margin-bottom: 10px;
+  @media screen and (max-width: 640px) {
+    font-size: 14px;
+  }
 }
 
 #loader {

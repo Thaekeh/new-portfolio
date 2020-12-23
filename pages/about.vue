@@ -8,6 +8,7 @@
           :key="index"
           left
           :color="item.color"
+          fill-dot
         >
           <template v-slot:opposite>
             <span
@@ -41,7 +42,7 @@ export default Vue.extend({
     return {
       timelineItems: [
         { year: 1029, title: 'Stuff', color: 'red' },
-        { year: 1029, title: 'Stuff', color: 'red' },
+        { year: 1997, title: 'Born in the Netherlands', color: 'blue' },
       ],
     }
   },

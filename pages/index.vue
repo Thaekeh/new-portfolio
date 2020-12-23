@@ -94,20 +94,17 @@
         </h2>
       </v-col>
     </v-row>
-    <v-dialog v-model="dialog" width="50%">
+    <v-dialog id="dialog" v-model="dialog" scrollable>
       <v-card id="content-card" width="100%" height="100%">
-        <!-- <v-app-bar collapse absolute>
+        <v-card-title>
+          {{ selectedProject.title }}
           <v-spacer></v-spacer>
-          <v-btn icon>
-            <v-icon>mdi-close</v-icon>
-          </v-btn>
-        </v-app-bar> -->
-        <!-- <v-card-title id="content-card-title">
-          <v-btn icon>
-            <v-icon> mdi-close </v-icon>
-          </v-btn>
-        </v-card-title> -->
-        <v-card-text>
+          <v-btn icon @click="dialog = false"
+            ><v-icon>mdi-close</v-icon></v-btn
+          ></v-card-title
+        >
+        <v-divider></v-divider>
+        <v-card-text class="card-text">
           <nuxt-content :document="selectedProject.content" />
         </v-card-text>
       </v-card>
@@ -272,8 +269,27 @@ export default {
   padding: 20px;
 }
 
-// #content-card-title {
-//   position: absolute;
-//   right: 10px;
-// }
+.headline {
+  position: fixed;
+}
+
+.card-text {
+  margin-top: 10px;
+  @media screen and (max-width: 640px) {
+    height: 300px;
+  }
+  @media screen and (min-width: 640px) {
+    height: 500px;
+  }
+}
+
+#dialog {
+  overflow: hidden;
+  @media screen and (max-width: 640px) {
+    width: 100%;
+  }
+  @media screen and (min-width: 640px) {
+    width: 80%;
+  }
+}
 </style>

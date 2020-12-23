@@ -214,6 +214,7 @@ I'm planning to make many more changes but for now, this is what it looks like.
 <b>The Dashboard</b>
 <img src="/ttb-dashboard.png" style="max-width: 100%"></img>
 From here you can access all the lists and texts that you have created.
+It also allows you to filter and search all your lists and texts.
 
 <b>The Text</b>
 <img src="/ttb-text.png" style="max-width: 100%"></img>
@@ -251,23 +252,22 @@ I have chosen Stripe because it works very well with Firebase.
  
 I think the UI is decent, but I plan on making improvements to make the app easier and more pleasant to use. 
 I want to add a marketplace as well. 
-This feature would allow users to add texts and flashcard-lists that other users made to their own account. 
+This feature would allow users to add texts and flashcard-lists that other users made to their own accounts. 
 This way users can easily create material that other users can benefit from. 
-One user could, for example, create a flashcard-list called “250 most used Spanish words”, which would be a great start for a Spanish learner to use. 
-Other users can go to the Marketplace, look for Spanish lists and add it to their own content. 
+One user could, for example, create a flashcard-list called “250 most-used Spanish words”, which would be a great start for a Spanish learner to use. 
+Other users can go to the Marketplace, look for Spanish lists, and add it to their own content. 
 Once added, users can change the content all they want. 
-If users want to, they can give it anywhere from a 1-star to 5-star rating. 
+If users want to, they can give it anywhere from a 1-star to a 5-star rating. 
 Lists and texts with higher star ratings will be found higher in searches on the Marketplace. 
  
 ### My Regrets 
 In choosing my tech stack, I don’t really have any regrets. 
-I might choose a different UI component library (or none at all) in my next project, because it can be limiting. 
-But for this project it was great to get started. 
+I might choose a different UI component library (or none at all) in my next project because it can be limiting. 
+But for this project, it was great to get started. 
  
 I will certainly use Vue and Nuxt in my upcoming projects. 
-The ease of use and the variety of features available is great for quicker and better developing. 
+The ease of use and the variety of features available is great for quicker and better development. 
  
 Firebase has been great for my purposes in this project and I would really like to use it in my future projects.
 
-All by all, I am very happy with everything I've learned over the last few months and I'm looking forward to learn more about webdevelopment and to improve my skills.
-If you have any questions, feel free to send me a <a href="/#contact" style="color: black">message</a>
+All in all, I am very happy with everything I've learned over the last few months and I'm looking forward to learning more about web development and improving my skills.

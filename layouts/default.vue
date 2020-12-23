@@ -164,7 +164,7 @@ export default {
       navigation: false,
       items: [
         {
-          icon: 'mdi-account-hard-hat',
+          icon: 'mdi-briefcase-outline',
           title: 'My Work',
           to: '/',
         },
@@ -172,6 +172,11 @@ export default {
           icon: 'mdi-code-tags',
           title: 'Code',
           to: '/code',
+        },
+        {
+          icon: 'mdi-account-outline',
+          title: 'About Me',
+          to: '/about',
         },
       ],
       socials: [
@@ -223,5 +228,14 @@ export default {
 
 #social-list {
   bottom: 20px;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 100ms;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
 }
 </style>

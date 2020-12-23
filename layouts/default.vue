@@ -89,7 +89,7 @@
       floating
       color="primary"
       mini-variant-width="65"
-      mobile-breakpoint="960px"
+      mobile-breakpoint="960"
     >
       <v-list>
         <v-tooltip
@@ -197,9 +197,6 @@ export default {
         },
       ],
     }
-  },
-  mounted() {
-    console.clear()
   },
 }
 </script>

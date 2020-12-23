@@ -4,7 +4,7 @@
       <h1 id="main-title">My Work</h1>
     </v-row>
     <v-row id="search-row" align="center">
-      <v-col>
+      <v-col cols="12" sm="12" md="6">
         <v-item-group id="type-selector" multiple>
           <v-item v-slot="{ active }"
             ><v-chip
@@ -15,9 +15,9 @@
               @click="appTag = !appTag"
             >
               <v-avatar left>
-                <v-icon>mdi-code-tags</v-icon>
+                <v-icon class="chip-icon" size="16px">mdi-code-tags</v-icon>
               </v-avatar>
-              Code
+              <span class="chip-text"> Code </span>
             </v-chip></v-item
           >
           <v-item v-slot="{ active }"
@@ -29,18 +29,17 @@
               @click="articleTag = !articleTag"
             >
               <v-avatar left>
-                <v-icon>mdi-text</v-icon>
+                <v-icon class="chip-icon" size="16px">mdi-text</v-icon>
               </v-avatar>
-
-              Article
+              <span class="chip-text"> Article </span>
             </v-chip></v-item
           >
         </v-item-group>
       </v-col>
-      <v-col>
+      <v-col cols="12" sm="12" md="6">
         <v-text-field
           v-model="searchQuery"
-          placeholder="Search for a specific project"
+          placeholder="Search Project"
           append-outer-icon="mdi-magnify"
           color="#750999"
         ></v-text-field>
@@ -96,16 +95,27 @@
       </v-col>
     </v-row>
     <v-dialog v-model="dialog" width="50%">
-      <v-card width="100%" height="100%">
-        <nuxt-content :document="selectedProject.content" />
+      <v-card id="content-card" width="100%" height="100%">
+        <!-- <v-app-bar collapse absolute>
+          <v-spacer></v-spacer>
+          <v-btn icon>
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+        </v-app-bar> -->
+        <!-- <v-card-title id="content-card-title">
+          <v-btn icon>
+            <v-icon> mdi-close </v-icon>
+          </v-btn>
+        </v-card-title> -->
+        <v-card-text>
+          <nuxt-content :document="selectedProject.content" />
+        </v-card-text>
       </v-card>
     </v-dialog>
   </v-container>
 </template>
 
 <script>
-// Vue Component Import
-
 export default {
   data() {
     return {
@@ -257,4 +267,13 @@ export default {
 .chip {
   font-weight: 500;
 }
+
+#content-card {
+  padding: 20px;
+}
+
+// #content-card-title {
+//   position: absolute;
+//   right: 10px;
+// }
 </style>

@@ -22,6 +22,7 @@
       app
       floating
       color="primary"
+      mini-variant-width="75"
     >
       <v-list>
         <v-tooltip
@@ -88,7 +89,7 @@
       app
       floating
       color="primary"
-      mini-variant-width="65"
+      mini-variant-width="75"
       mobile-breakpoint="960"
     >
       <v-list>

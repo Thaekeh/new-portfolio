@@ -21,12 +21,7 @@
               >
                 {{ item.title }}
               </h2>
-              <div>
-                Lorem ipsum dolor sit amet, no nam oblique veritus. Commune
-                scaevola imperdiet nec ut, sed euismod convenire principes at.
-                Est et nobis iisque percipit, an vim zril disputando
-                voluptatibus, vix an salutandi sententiae.
-              </div>
+              <div>{{ item.text }}</div>
             </div></template
           ></v-timeline-item
         >
@@ -42,7 +37,13 @@ export default Vue.extend({
     return {
       timelineItems: [
         { year: 1029, title: 'Stuff', color: 'red' },
-        { year: 1997, title: 'Born in the Netherlands', color: 'blue' },
+        {
+          year: 1997,
+          title: 'Born in the Netherlands',
+          color: 'blue',
+          text:
+            'I was born on a farm in the Netherlands in 1997. Here I happily lived with my family until I was 11 years old.  ',
+        },
       ],
     }
   },

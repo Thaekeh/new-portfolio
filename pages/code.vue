@@ -60,13 +60,14 @@
           ></v-progress-circular>
           <p
             class="codepen"
-            data-height="389"
+            data-height="265"
             data-theme-id="dark"
             data-default-tab="js,result"
             data-user="thaekeh"
             data-slug-hash="MWjjOLx"
+            data-preview="true"
             style="
-              height: 389px;
+              height: 265px;
               box-sizing: border-box;
               display: flex;
               align-items: center;

@@ -174,11 +174,6 @@ export default {
           title: 'Code',
           to: '/code',
         },
-        {
-          icon: 'mdi-account-outline',
-          title: 'About Me',
-          to: '/about',
-        },
       ],
       socials: [
         {

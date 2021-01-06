@@ -93,6 +93,50 @@
           ></script>
         </v-card>
       </div>
+      <div class="code-container">
+        <h2 class="pen-title">Movie finder made with React</h2>
+        <v-card color="secondary" flat>
+          <v-progress-circular
+            v-if="loader"
+            id="loader"
+            size="50"
+            indeterminate
+            color=""
+          ></v-progress-circular>
+          <p
+            class="codepen"
+            data-height="265"
+            data-theme-id="dark"
+            data-default-tab="js,result"
+            data-user="thaekeh"
+            data-slug-hash="RwGyMrE"
+            style="
+              height: 265px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+            data-pen-title="React Movie Finder"
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/thaekeh/pen/RwGyMrE">
+                React Movie Finder</a
+              >
+              by Thaekeh (<a href="https://codepen.io/thaekeh">@thaekeh</a>) on
+              <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </v-card>
+      </div>
     </v-col>
   </v-row>
 </template>
